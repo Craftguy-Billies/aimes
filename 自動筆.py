@@ -646,7 +646,7 @@ def add_rss_item(template_path, link, blog):
     item_pub_date = SubElement(item, 'pubDate')
     item_pub_date.text = datetime.now(hk_timezone).strftime('%a, %d %b %Y %H:%M:%S %z')
   
-    root_url = "https://www.avoir.me"
+    root_url = "https://www.aimes.me"
     if enclosure_url.startswith(".."):
         enclosure_url = os.path.join(root_url, os.path.normpath(enclosure_url)[3:])
     if enclosure_url:
@@ -688,7 +688,7 @@ def add_blog_post(final_article, link, category):
     enclosure_url = soup.find('img', class_='banner')['src']
     description = soup.find('div', class_='description').find('p').text
 
-    root_url = "https://www.avoir.me"
+    root_url = "https://www.aimes.me"
     if enclosure_url.startswith(".."):
         enclosure_url = os.path.join(root_url, os.path.normpath(enclosure_url)[3:])
 
@@ -797,7 +797,7 @@ def initialize_rss(path, cat):
                           </div>
                       </ul>
                       <ul id = "ts">
-                          <li class = "Avoir-logo"><a href="https://www.aimes.me/">Avoir</a></li>
+                          <li class = "Avoir-logo"><a href="https://www.aimes.me/">Aimes</a></li>
                           <li class = "hideOnMobile dropdown">
                               <a href="https://www.aimes.me/related_post.html">最新推薦</a>
                               <div class="dropdownmenu">
@@ -1042,7 +1042,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
                         <meta name="referrer" content="origin">
 			<meta name="apple-mobile-web-app-capable" content="yes"/>
                         <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-                        <meta name="apple-mobile-web-app-title" content="Avoir"/>
+                        <meta name="apple-mobile-web-app-title" content="Aimes"/>
                         <meta name="apple-touch-fullscreen" content="yes"/>
 			<link rel="icon" type="image/x-icon" href="https://www.aimes.me/icons/favicon.ico">
                         <link rel="shortcut icon" type="image/x-icon" href="https://www.aimes.me/icons/favicon.ico">
@@ -1101,7 +1101,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
                                   </div>
                               </ul>
                               <ul id = "ts">
-                                  <li class = "Avoir-logo"><a href="https://www.avoir.me/">Aimes</a></li>
+                                  <li class = "Avoir-logo"><a href="https://www.aimes.me/">Aimes</a></li>
                                   <li class = "hideOnMobile dropdown">
                                       <a href="https://www.aimes.me/related_post.html">最新推薦</a>
                                       <div class="dropdownmenu">
@@ -1119,7 +1119,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
     cat_url = "/category/"
     for cat in category:
       cat_url += cat + '/'
-      final_article += '  <i class="fa-solid fa-angle-right"></i> <a href="https://www.avoir.me' + cat_url + '">' + cat + '</a>'
+      final_article += '  <i class="fa-solid fa-angle-right"></i> <a href="https://www.aimes.me' + cat_url + '">' + cat + '</a>'
     final_article += "\n</div>\n"
     final_article += '<div class="blog-type">'
     final_article += category[0]
