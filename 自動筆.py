@@ -727,7 +727,7 @@ def initialize_rss(path, cat):
     tree.write(rss_file, encoding='utf-8', xml_declaration=True)
 
     priority = "0.75"
-    the_url = "https://www.avoir.me/" + path + "/"
+    the_url = "https://www.aimes.me/" + path + "/"
     append_to_sitemap(the_url, priority)
 
     # category page content
@@ -736,20 +736,20 @@ def initialize_rss(path, cat):
                   <head>
                   <meta charset="UTF-8">
                       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		      <link rel="icon" href="https://www.avoir.me/icons/favicon.png" type="image/png">
-                      <link rel="stylesheet" href="https://www.avoir.me/related_post.css">
+		      <link rel="icon" href="https://www.aimes.me/icons/favicon.png" type="image/png">
+                      <link rel="stylesheet" href="https://www.aimes.me/related_post.css">
                       <meta name="theme-color" content="white">
-		      <link rel="icon" type="image/x-icon" href="https://www.avoir.me/icons/favicon.ico">
-                      <link rel="shortcut icon" type="image/x-icon" href="https://www.avoir.me/icons/favicon.ico">
+		      <link rel="icon" type="image/x-icon" href="https://www.aimes.me/icons/favicon.ico">
+                      <link rel="shortcut icon" type="image/x-icon" href="https://www.aimes.me/icons/favicon.ico">
 		      <link href="data:image/vnd.microsoft.icon;base64,AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAACQAAMMOAADDDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQOAICAvsEBATrJiYmFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgIBwqKioSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AADAAP8AAAMAAMAA/wAAAwAAwAH/gAADAAD/D//w8P8AAP8P//Hx/wAA/4f/4eH/AAD/h//h4f8AAP/H/8PD/wAA/8P/w8P/AAD/w//Hx/8AAP/gAAAH/wAA/+AAAA//AAD/8AAAD/8AAP/w/w8P/wAA//j+Hh//AAD/+H4eH/8AAP/4fD4//wAA//w8PD//AAD//Dx8f/8AAP/+GHh//wAA//4YeH//AAD//xDw//8AAP//APD//wAA//8B8f//AAD//4Hh//8AAP//g+P//wAA///Dw///AAD//8PD//8AAP//44f//wAA///hh///AAD//+GP//8AAP//8A///wAA///wH///AAD///gf//8AAP//+B///wAA///8P///AAD///w///8AAP///n///wAA////////AAD///////8AAP///////wAA////////AAA=" rel="icon" type="image/x-icon">
                       <meta name="referrer" content="origin">
                       <meta property="og:locale" content="zh_TW" />
-                      <meta property="og:site_name" content="Avoir" />
+                      <meta property="og:site_name" content="Aimes" />
                       <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
                       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
                       <style> * {box-sizing: border-box;margin: 0;padding: 0;font-family: 'Noto Sans TC', sans-serif;scroll-behavior: smooth;}</style>
                       <title>"""
-    content += "Avoir - " + cat + "</title>\n"
+    content += "Aimes - " + cat + "</title>\n"
 
     # Dynamic data for the schema
     schema_data = {
@@ -758,14 +758,14 @@ def initialize_rss(path, cat):
 	    {
 	        "@type": "WebPage",
 	        "name": cat,
-	        "url": "https://www.avoir.me/" + path,
+	        "url": "https://www.aimes.me/" + path,
 	        "description": cat
 	    },
 	    {
 	        "@type": "Organization",
-	        "name": "Avoir",
-	        "url": "https://www.avoir.me",
-		"logo": "https://www.avoir.me/icons/favicon.png",
+	        "name": "Aimes",
+	        "url": "https://www.aimes.me",
+		"logo": "https://www.aimes.me/icons/favicon.png",
 	        "sameAs": [
 		    "https://www.facebook.com/avoir.me",
 		    "https://www.instagram.com/avoir.hk/",
@@ -774,8 +774,8 @@ def initialize_rss(path, cat):
 	    },
 	    {
 	      "@type": "WebSite",
-	      "name": "Avoir",
-	      "url": "https://www.avoir.me"
+	      "name": "Aimes",
+	      "url": "https://www.aimes.me"
 	    }
         ]
     }
@@ -797,9 +797,9 @@ def initialize_rss(path, cat):
                           </div>
                       </ul>
                       <ul id = "ts">
-                          <li class = "Avoir-logo"><a href="https://www.avoir.me/">Avoir</a></li>
+                          <li class = "Avoir-logo"><a href="https://www.aimes.me/">Avoir</a></li>
                           <li class = "hideOnMobile dropdown">
-                              <a href="https://www.avoir.me/related_post.html">最新推薦</a>
+                              <a href="https://www.aimes.me/related_post.html">最新推薦</a>
                               <div class="dropdownmenu">
                                   <div class="first-box2">
               
@@ -813,8 +813,8 @@ def initialize_rss(path, cat):
                       <div class="direct">"""
     categories = path.split('/')[1:]
     current_path = "category/"
-    base_url = "https://www.avoir.me/"
-    content += '<a href="https://www.avoir.me/">Home</a>'
+    base_url = "https://www.aimes.me/"
+    content += '<a href="https://www.aimes.me/">Home</a>'
     for cate in categories:
       current_path += cate + '/'  # Append category to the current path
       content += ' <i class="fa-solid fa-angle-right"></i> <a href="' + base_url + current_path + '">' + cate + '</a>'
@@ -834,15 +834,15 @@ def initialize_rss(path, cat):
                             </div>
                             <div class="footer-nav">
                                 <ul id="footerCategories">
-                                    <li><a href="https://www.avoir.me">主頁</a></li>
+                                    <li><a href="https://www.aimes.me">主頁</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="footer-bottom">
-                            <p>Copyright &copy; 2024 by <span class="highlight">Avoir.me</span> All Rights Reserved.</p>
+                            <p>Copyright &copy; 2024 by <span class="highlight">Aimes.me</span> All Rights Reserved.</p>
                         </div>
                     </footer>
-                  <script src="https://www.avoir.me/related_post.js"></script>
+                  <script src="https://www.aimes.me/related_post.js"></script>
 		  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1588758681130963"
      crossorigin="anonymous"></script>
                   </body>
@@ -992,7 +992,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
     final_article = "<!DOCTYPE html>"
     h2count = len(outline)
     title = titler(outline, query, model, lang, h2count)
-    file_url = f"https://avoir.me/{query}/index.html"
+    file_url = f"https://aimes.me/{query}/index.html"
     ban = banner(title, model)
     image = banner(title, model, outline, ban)
     metadata = metadataer(outline, query, lang, model)
@@ -1004,15 +1004,15 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
     final_article += "\n"
     final_article += metadata
     final_article += '\n'
-    final_article += '<link rel="canonical" href="https://www.avoir.me/' + query + '/">'
+    final_article += '<link rel="canonical" href="https://www.aimes.me/' + query + '/">'
 
     # Variables for the meta content
-    og_url = "https://www.avoir.me/" + query + "/"
+    og_url = "https://www.aimes.me/" + query + "/"
     og_title = query
     souper = BeautifulSoup(intro, 'html.parser')
     le_intro = souper.find_all('p')
     og_description = le_intro[0].get_text() if le_intro else None
-    og_image = "https://www.avoir.me/images/" + ban
+    og_image = "https://www.aimes.me/images/" + ban
 
     # Dynamically construct the meta tags
     meta_tags = f'''
@@ -1027,25 +1027,25 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
     '''
 
     final_article += meta_tags
-    final_article += r'''<link rel="stylesheet" href="https://www.avoir.me/post.css">
-    			<link rel="icon" href="https://www.avoir.me/icons/favicon.png" type="image/png">
+    final_article += r'''<link rel="stylesheet" href="https://www.aimes.me/post.css">
+    			<link rel="icon" href="https://www.aimes.me/icons/favicon.png" type="image/png">
                         <meta name="theme-color" content="white">
 			<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEjSURBVFhH5ZXdDYMwDIRJR2AA5mUAdmAdnhmAF4QYoW2iXBtZiX8CCFX9JOSUEp99OMI93zQ38ojxNn67AOdcuI7wuw6knU/TFFd2qk8Btb72MFU5sK5riF706CmucgDdYyv9baF6BlKxGmFgLoA7dtx/JU45BZ62bePKhqkAiM7zHGLKtm0hDsMQohbTEKbDlq5B7p6E2oFlWULkkluEgdqBUsd0u9UF0wzkkkIQaIWBqgAqAjix0h6K2oEzxHKIBUjJ932Pqy8otu/7EDnEITzSnUdIzzswjmOIPgl3gdJ9DtYBdK9J5p+lz2n2izOgEQf0dWn2FguwvntOjMvFOmDpHlCxruviKs9nBqSOazssgXziDFyN6XN8Bbc78O8FNM0Lp5u30Y5sbbYAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <meta property="og:locale" content="zh_TW" />
-                        <meta property="og:site_name" content="Avoir" />
+                        <meta property="og:site_name" content="Aimes" />
 	                <meta property="og:type" content="article" />
 		 	<meta name="robots" content="index, follow" />
-		 	<meta name="author" content="Avoir" />
+		 	<meta name="author" content="Aimes" />
                         <meta name="referrer" content="origin">
 			<meta name="apple-mobile-web-app-capable" content="yes"/>
                         <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
                         <meta name="apple-mobile-web-app-title" content="Avoir"/>
                         <meta name="apple-touch-fullscreen" content="yes"/>
-			<link rel="icon" type="image/x-icon" href="https://www.avoir.me/icons/favicon.ico">
-                        <link rel="shortcut icon" type="image/x-icon" href="https://www.avoir.me/icons/favicon.ico">
+			<link rel="icon" type="image/x-icon" href="https://www.aimes.me/icons/favicon.ico">
+                        <link rel="shortcut icon" type="image/x-icon" href="https://www.aimes.me/icons/favicon.ico">
                         <style> * {box-sizing: border-box;margin: 0;padding: 0;font-family: 'Noto Sans TC', sans-serif;scroll-behavior: smooth;}</style>'''
 	
     # Dynamic data for the schema
@@ -1061,19 +1061,19 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	      "datePublished": get_current_hk_time(),
 	      "author": {
 	          "@type": "Person",
-	          "name": "Avoir"
+	          "name": "Aimes"
 	      },
 	      "publisher": {
 	          "@type": "Organization",
-	          "name": "Avoir",
-	          "url": "https://www.avoir.me"
+	          "name": "Aimes",
+	          "url": "https://www.aimes.me"
 	      }
             },
 	    {
 	      "@type": "Organization",
-	      "name": "Avoir",
-	      "url": "https://www.avoir.me",
-	      "logo": "https://www.avoir.me/icons/favicon.png",
+	      "name": "Aimes",
+	      "url": "https://www.aimes.me",
+	      "logo": "https://www.aimes.me/icons/favicon.png",
 	      "sameAs": [
 	          "https://www.facebook.com/avoir.me",
 		  "https://www.instagram.com/avoir.hk/",
@@ -1082,8 +1082,8 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	    },
 	    {
 	      "@type": "WebSite",
-	      "name": "Avoir",
-	      "url": "https://www.avoir.me"
+	      "name": "Aimes",
+	      "url": "https://www.aimes.me"
 	    }
 	]
     }
@@ -1101,9 +1101,9 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
                                   </div>
                               </ul>
                               <ul id = "ts">
-                                  <li class = "Avoir-logo"><a href="https://www.avoir.me/">Avoir</a></li>
+                                  <li class = "Avoir-logo"><a href="https://www.avoir.me/">Aimes</a></li>
                                   <li class = "hideOnMobile dropdown">
-                                      <a href="https://www.avoir.me/related_post.html">最新推薦</a>
+                                      <a href="https://www.aimes.me/related_post.html">最新推薦</a>
                                       <div class="dropdownmenu">
                                           <div class="first-box2">
                       
@@ -1115,7 +1115,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
                           </nav>'''
     final_article += '\n<img class="banner" src="../images/'
     final_article += ban
-    final_article += '">\n<div class="direct">\n  <a href="https://www.avoir.me/">Home</a>\n'
+    final_article += '">\n<div class="direct">\n  <a href="https://www.aimes.me/">Home</a>\n'
     cat_url = "/category/"
     for cat in category:
       cat_url += cat + '/'
@@ -1131,7 +1131,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
     hong_kong_tz = pytz.timezone('Asia/Hong_Kong')
     current_time = datetime.now(hong_kong_tz)
     formatted_date = current_time.strftime('%d %b %Y')
-    author_name = "Avoir"
+    author_name = "Aimes"
     publish_date_html = f'<div class="publish-date">By {author_name} - {formatted_date}</div>'
     final_article += publish_date_html
     toc = '\n\n<section class="middle-img">\n<figure>\n<img class = "middle-img-edit" src="../images/'
@@ -1183,15 +1183,15 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
                               </div>
                               <div class="footer-nav">
                                   <ul id="footerCategories">
-                                      <li><a href="https://www.avoir.me">主頁</a></li>
+                                      <li><a href="https://www.aimes.me">主頁</a></li>
                                   </ul>
                               </div>
                           </div>
                           <div class="footer-bottom">
-                              <p>Copyright &copy; 2024 by <span class="highlight">Avoir.me</span> All Rights Reserved.</p>
+                              <p>Copyright &copy; 2024 by <span class="highlight">Aimes.me</span> All Rights Reserved.</p>
                           </div>
                       </footer>
-                  <script src="https://www.avoir.me/post.js"></script>
+                  <script src="https://www.aimes.me/post.js"></script>
 		  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1588758681130963"
      crossorigin="anonymous"></script>
     """
@@ -1205,7 +1205,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
     encoded_url = urllib.parse.quote(file_url, safe=':/')
     add_rss_item("rss.xml", encoded_url, final_article)
     add_blog_post(final_article, encoded_url, category)
-    loc = "https://www.avoir.me/"
+    loc = "https://www.aimes.me/"
     loc += query
     loc += "/"
     priority = "0.90"
