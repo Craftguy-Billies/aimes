@@ -1216,9 +1216,14 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["缺乏安全感的人的特徵"
+    queries = ["如何知道內向的人喜歡你",
+	       "怎麼判斷一個人喜不喜歡你",
+	       "如何讓心儀對象愛上你",
+	       "暗戀對方會知道嗎",
+	       "什麼才是真正的愛",
+	       "怎麼確定愛一個人"
 ]
-    categories = [['感情', '心理']]
+    categories = [['感情', '心理'],['感情', '心理'],['感情', '心理'],['感情', '心理'],['感情', '心理'],['感情', '心理']]
     model = "meta/llama-3.1-405b-instruct"
     size = 4
     sample_size = 4
