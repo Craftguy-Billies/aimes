@@ -632,8 +632,18 @@ def add_rss_item(template_path, link, blog):
     soup = BeautifulSoup(blog, 'html.parser')
     title = soup.title.string
     enclosure_url = soup.find('img', class_='banner')['src']
-    description = soup.find('div', class_='description').find('p').text
-
+    description_div = soup.find('div', class_='description')
+    if description_div:
+        description_p = description_div.find('p')
+        if description_p:
+            description = description_p.get_text(strip=True)
+        else:
+            description = description_div.get_text(strip=True)
+        if not description:
+            description = soup.title.string
+    else:
+        description = soup.title.string
+	    
     # Create a new item
     item = Element('item')
     item_title = SubElement(item, 'title')
