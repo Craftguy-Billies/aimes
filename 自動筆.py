@@ -1226,8 +1226,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["如何知道內向的人喜歡你",
-	       "怎麼判斷一個人喜不喜歡你",
+    queries = ["怎麼判斷一個人喜不喜歡你",
 	       "如何讓心儀對象愛上你",
 	       "暗戀對方會知道嗎",
 	       "什麼才是真正的愛",
