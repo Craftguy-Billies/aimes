@@ -103,6 +103,7 @@ def banner(title, model, outline = None, previous = None):
     {again}
     
     output queries in english. output in a single dimensional python list format.
+    for example: ['mental health couples']
     No premable and explanations.
     """
 
