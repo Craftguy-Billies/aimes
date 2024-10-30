@@ -563,6 +563,7 @@ def introer(outline, title, lang, model, max_retries=3, delay=2):
     i want you to craft me an introductory paragraph that can captivate readers to continue reading. 
     Describe on what topics will be discussed in the following paragraphs. Word limit of the paragraph is 100 words.
     Starting with a question is preferred. Only use an exclamation mark at the last sentence.
+    TONE: sincere
     return me the introductory paragraph with <p> tags wrapped around.
     return me in {lang}. no premable and explanation.
     """
