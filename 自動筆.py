@@ -79,6 +79,10 @@ def extract_json_content(input_string):
         return {}
 
 def banner(title, model, outline = None, previous = None):
+    max_retries = 3  # Set a maximum number of retries
+    retry_count = 0  # Track the number of attempts
+    delay = 2  # Set a delay (in seconds) between retries
+    
     data = ""
     again = ""
     if outline:
@@ -90,6 +94,7 @@ def banner(title, model, outline = None, previous = None):
 
         again += "AGAIN: your returned query should be significantly different aspect from the previous query:"
         again += previous
+        
     prompt = f"""
     i now have this blog title:
     {title}
@@ -109,21 +114,37 @@ def banner(title, model, outline = None, previous = None):
     No premable and explanations.
     """
 
-    completion = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": prompt.strip()}],
-        temperature=0.2,
-        top_p=0.7,
-        max_tokens=8192,
-        stream=True
-    )
-
+    # Initialize response
     response = ""
-    for chunk in completion:
-        if chunk.choices[0].delta.content is not None:
-            response += chunk.choices[0].delta.content
 
-    response = extract_list_content(response)[0]
+    while retry_count < max_retries:
+        try:
+            completion = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt.strip()}],
+                temperature=0.2,
+                top_p=0.7,
+                max_tokens=8192,
+                stream=True
+            )
+
+            response = ""
+            for chunk in completion:
+                if chunk.choices[0].delta.content is not None:
+                    response += chunk.choices[0].delta.content
+
+            # Check if response is in the expected format and contains a list
+            response_list = extract_list_content(response)
+            if response_list and isinstance(response_list, list):
+                response = response_list[0]  # Return the extracted query list
+
+        except IndexError:
+            print(f"Attempt {retry_count + 1} failed: Empty or invalid response format.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+        retry_count += 1
+        time.sleep(delay)
     response = response[:97]
     px = pixabay.core("45631523-f41b44ca77fa2a2753db5e2d2")
     space = px.query(response, orientation = 'horizontal')
