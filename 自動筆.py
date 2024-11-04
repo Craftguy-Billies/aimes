@@ -185,8 +185,7 @@ def titler(outline, query, model, lang, h2count, max_retries=3, delay=2):
             {outline}
 
             i want a title that is clickbait enough, can convey the information I want to discuss about, in moderate length and humanized tone.
-            it must be informational intent. words like "盤點", "攻略", "方法" are favored.
-	    if you add numbers like '7大', it MUST MATCH a general noun, such as 角度, 分析. DO NOT pair numbers with specific nouns that could be inaccurate based on article content.                  
+            it must be informational intent. Title with captivating question is favored.  
             return me a single JSON object with single key 'title' without premable and explanations.
 	    make the title no longer than 25 characters. but make sure the title include the complete keyword i want to optimize SEO for: {query}.
             you should SEO optimize the title with the keyword {query} naturally.
@@ -316,6 +315,7 @@ def topic_refiner(topics, query, model, lang, size, max_retries=3, delay=2):
 
             now i want to write a blog article about this topic. expected blog size: large
             from the topics of top ranked articles, PICK best h2 headers with consistent level of specificity, and rewrite me these h2 headers.
+	    each header should be a question.
             EVERY HEADER SHOULD BE DISTINCT ASPECT! NO DUPLICATION!
             do not give duplicated headers. headers must be DISTINCT and cannot have DUPLICATED ASPECTS. do not give totally unrelated headers.
             the h2 headers given should be distinct, non-repetitive, and focused. no generic or catch-all phrases. no need elaboration in headers if not mentioned in original header. DO NOT form headers by clustering other's multiple headers. i need PICK and REWRITE.
@@ -1197,6 +1197,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
                 bulletpt = pf_rewriter(query, website_text, header, lang, title, result['url'], model)
                 bullet_points = combine_multiline_strings(bullet_points, bulletpt)
                 bullet_points += f"\nNext Article, title: {title}, url: {result['url']}\n"
+                print(bullet_points)
         final = ai_rewriter(query, bullet_points, header, lang, model)
 
         final_article += final
@@ -1252,10 +1253,9 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["什麼才是真正的愛",
-	       "怎麼確定愛一個人"
+    queries = ["愛一個人是甚麼感覺"
 ]
-    categories = [['感情', '心理'],['感情', '心理']]
+    categories = [['感情', '心理']]
     model = "meta/llama-3.1-405b-instruct"
     size = 4
     sample_size = 4
