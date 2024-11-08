@@ -1256,10 +1256,13 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["為什麼會對一個人有感覺",
-	       "愛的定義是什麼"
+    queries = ["如何確定愛一個人",
+	       "塔羅牌是什麼原理",
+	       "塔羅牌會準的原因",
+	       "塔羅可以幫別人算嗎",
+	       "塔羅牌可以算什麼"
 ]
-    categories = [['感情', '心理'],['感情', '心理']]
+    categories = [['感情', '心理'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗']]
     model = "meta/llama-3.1-405b-instruct"
     size = 4
     sample_size = 4
