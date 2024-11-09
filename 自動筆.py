@@ -1256,9 +1256,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["塔羅可以幫別人算嗎",
-	       "塔羅牌可以算什麼",
-	       "MBTI哪個人格最內向",
+    queries = ["MBTI哪個人格最內向",
 	       "16人格哪个最稀有",
 	       "天蠍座跟哪個星座最不配"
 ]
