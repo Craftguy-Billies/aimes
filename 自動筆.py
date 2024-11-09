@@ -1256,8 +1256,7 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["MBTI哪個人格最內向",
-	       "16人格哪个最稀有",
+    queries = ["16人格哪个最稀有",
 	       "天蠍座跟哪個星座最不配"
 ]
     categories = [['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗']]
