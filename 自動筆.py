@@ -521,6 +521,7 @@ def ai_rewriter(query, bullet_points, header, lang, model):
     return me in a HTML form. text must be labelled with html tags.
     you can add <h3> and <strong> if needed. but do not overuse <h3>.
     AGAIN: No "總而言之", "總之", "最後", "值得注意的是".
+    NO TRANSITIONAL KEYWORDS!
     return me in {lang}. no premable and explanation.
     """
 
@@ -1259,7 +1260,7 @@ def main():
     queries = ["16人格哪个最稀有",
 	       "天蠍座跟哪個星座最不配"
 ]
-    categories = [['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗']]
+    categories = [['感情', '心理測驗'],['感情', '心理測驗']]
     model = "meta/llama-3.1-405b-instruct"
     size = 4
     sample_size = 4
