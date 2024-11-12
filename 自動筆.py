@@ -161,8 +161,10 @@ def banner(title, model, outline = None, previous = None):
     
         j += 1
 
+    pull_repo()
     with open('id.txt', 'a') as file:
         file.write(f'{pic_id}\n')
+    commit_changes()
 
     image_dir = './images/'
     if not os.path.exists(image_dir):
@@ -515,12 +517,12 @@ def ai_rewriter(query, bullet_points, header, lang, model):
     do not include promotions, and make sure the tone of rewriting is professional. make sure your returned paragraphs are coherent and fluent, instead of point form like paragraphs.
     your rewriting need to be humanized and fluent. prioritize fluency over informative.
     your replies must base on the web search information. do not create information.
-    DO NOT INCLUDE INTRODUCTION AND CONCLUSION, OR RELATED ASPECTS. No "總而言之", "總之", "最後", "值得注意的是".
+    DO NOT INCLUDE INTRODUCTION AND CONCLUSION, OR RELATED ASPECTS. No "總而言之", "總之", "最後", "值得注意的是", "另外", "首先", "其次", "此外"
     make sure you do not misidentify details. this is a MUST.
     also return me details for each. DO NOT JUST KEEP GIVING EXAMPLES. I need details.
     return me in a HTML form. text must be labelled with html tags.
     you can add <h3> and <strong> if needed. but do not overuse <h3>.
-    AGAIN: No "總而言之", "總之", "最後", "值得注意的是".
+    AGAIN: NEVER USE "總而言之", "總之", "最後", "值得注意的是", "另外", "首先", "其次", "此外"
     NO TRANSITIONAL KEYWORDS!
     return me in {lang}. no premable and explanation.
     """
@@ -653,6 +655,7 @@ def prettify_element(elem):
     return reparsed.toprettyxml(indent="  ")
 
 def add_rss_item(template_path, link, blog):
+    pull_repo()
     tree = parse(template_path)
     root = tree.getroot()
     channel = root.find('channel')
@@ -697,6 +700,7 @@ def add_rss_item(template_path, link, blog):
     pretty_item = fromstring(pretty_item_str.encode('utf-8'))
     channel.append(pretty_item)
     tree.write(template_path, encoding='utf-8', xml_declaration=True)
+    commit_changes()
 
 def add_blog_post(final_article, link, category):
     structure_file = "structure.json"
@@ -744,8 +748,10 @@ def add_blog_post(final_article, link, category):
     current_level['posts'].append(post)
 
     # Save the updated structure
+    pull_repo()
     with open(structure_file, 'w') as file:
         json.dump(structure, file, indent=4)
+    commit_changes()
 
     # Update RSS files for each level in the category hierarchy
     # Update for the main category
@@ -760,6 +766,7 @@ def add_blog_post(final_article, link, category):
 
 
 def initialize_rss(path, cat):
+    pull_repo()
     """Initialize an RSS feed in a given directory."""
     rss_file = os.path.join(path, "rss.xml")
     channel = Element('channel')
@@ -895,6 +902,7 @@ def initialize_rss(path, cat):
     html_file = os.path.join(path, "index.html")
     with open(html_file, 'w', encoding='utf-8') as f:
         f.write(content)
+    commit_changes()
 
 
 def prettify(element, level=0):
@@ -914,6 +922,7 @@ def prettify(element, level=0):
             element.tail = indent
 
 def update_rss(rss_path, post):
+    pull_repo()
     """Update the RSS file with a new blog post, prettifying the XML."""
     if os.path.exists(rss_path):
         tree = ElementTree(file=rss_path)
@@ -933,8 +942,10 @@ def update_rss(rss_path, post):
     prettify(channel)
 
     tree.write(rss_path, encoding='utf-8', xml_declaration=True)
+    commit_changes()
 
 def append_to_sitemap(loc, priority):
+    pull_repo()
     # File path to the sitemap.xml
     file_path = 'sitemap.xml'
 
@@ -993,6 +1004,7 @@ def append_to_sitemap(loc, priority):
     # Write the updated and prettified XML back to the file
     tree = ElementTree(root)
     tree.write(file_path, encoding='UTF-8', xml_declaration=True)
+    commit_changes()
 
 def get_current_hk_time():
     tz_hk = pytz.timezone('Asia/Hong_Kong')
@@ -1025,6 +1037,13 @@ def commit_changes():
         subprocess.run(["git", "push", "--force"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error occurred during git push: {e}")
+
+def pull_repo():
+    try:
+        # Pull the latest changes from the repository, including sitemap.xml
+        subprocess.run(["git", "pull", "--rebase"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error pulling the repository: {e}")
 
 
 def autoblogger(query, model, size, lang, category, sample_size, outline_editor):
@@ -1242,8 +1261,10 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
     dir_path = query
     os.makedirs(dir_path, exist_ok=True)
     file_path = os.path.join(dir_path, "index.html")
+    pull_repo()
     with open(file_path, "a", encoding="utf-8") as file:
         file.write(final_article)
+    commit_changes()
 
     encoded_url = urllib.parse.quote(file_url, safe=':/')
     add_rss_item("rss.xml", encoded_url, final_article)
