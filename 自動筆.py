@@ -1278,11 +1278,11 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["塔羅牌不能問什麼",
-	       "塔羅牌如何淨化",
-	       "塔羅牌可以丟棄嗎",
-	       "塔羅牌邪門",
-	       "塔羅牌代價"
+    queries = ["塔羅可以問過去的事嗎",
+	       "塔羅牌感情問題參考",
+	       "塔羅問題怎麼問",
+	       "塔羅牌問題參考",
+	       "單身占卜問題"
 ]
     categories = [['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗'],['感情', '心理測驗']]
     model = "meta/llama-3.1-405b-instruct"
