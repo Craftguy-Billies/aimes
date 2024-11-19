@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Aimes</title>
     <link>https://www.aimes.me</link>
     <description>Aimes - Blog Posts</description>
-    <lastBuildDate>Mon, 18 Nov 2024 01:17:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:25:30 +0800</lastBuildDate>
 
-    <!-- PubSubHubbub hub declaration -->
-    <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/" />
-    <!-- Self-link to the RSS feed -->
-    <atom:link rel="self" href="https://www.aimes.me/rss.xml" type="application/rss+xml" />
+    
+    <ns0:link rel="hub" href="https://pubsubhubbub.appspot.com/" />
+    
+    <ns0:link rel="self" href="https://www.aimes.me/rss.xml" type="application/rss+xml" />
     
     <item>
   <title>為什麼會對一個人有感覺？揭開戀愛的神秘面紗</title>
@@ -215,5 +215,11 @@
   <description>您是否曾經對雷諾曼牌卡的神秘力量感到好奇？這種古老的占卜工具，到底有什麼秘密可以幫助我們洞察未來？在這篇文章中，我們將深入探討雷諾曼牌卡的圖像特殊意義、正確解讀牌義的方法、開牌儀式的步驟，以及如何結合多張牌卡作解讀。無論您是占卜新手還是老手，這篇文章都將為您揭開雷諾曼牌卡的神秘面紗，讓您更好地理解這種古老的占卜工具！</description>
   <pubDate>Mon, 18 Nov 2024 01:17:32 +0800</pubDate>
   <enclosure url="https://www.aimes.me/images/Renoir card reading ceremony secrets.jpg" type="image/jpeg" />
+</item><item>
+  <title>你有這些特徵嗎？缺乏安全感的人的特徵大揭露！</title>
+  <link>https://aimes.me/%E7%BC%BA%E4%B9%8F%E5%AE%89%E5%85%A8%E6%84%9F%E7%9A%84%E4%BA%BA%E7%9A%84%E7%89%B9%E5%BE%B5/index.html</link>
+  <description>你是否常常感到不安、焦慮或自我懷疑？你是否渴望擁有穩定的關係和工作，但卻總是無法實現？安全感是人們內心深處的一種基本需求，但許多人卻缺乏它。在這篇文章中，我們將探討什麼是安全感、缺乏安全感的人有哪些特徵，以及如何使自己獲得安全感。另外，我們還將討論原生家庭對安全感的影響。讓我們一起揭開安全感的神秘面紗，找出缺乏安全感的根源，並學習如何重建自我的安全感！</description>
+  <pubDate>Tue, 19 Nov 2024 12:25:30 +0800</pubDate>
+  <enclosure url="https://www.aimes.me/images/insecure people personality traits.jpg" type="image/jpeg" />
 </item></channel>
 </rss>
