@@ -1278,10 +1278,9 @@ def autoblogger(query, model, size, lang, category, sample_size, outline_editor)
 	
 
 def main():
-    queries = ["大天使神諭卡教學",
-	       "雷諾曼開牌儀式"
+    queries = ["缺乏安全感的人的特徵"
 ]
-    categories = [['感情', '心理測驗'],['感情', '心理測驗']]
+    categories = [['感情', '心理']]
     model = "meta/llama-3.1-405b-instruct"
     size = 4
     sample_size = 4
